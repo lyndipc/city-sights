@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LaunchView.swift
 //  City Sights
 //
 //  Created by Lyndi Castrejon on 5/3/22.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LaunchView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LaunchView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LaunchView()
     }
 }
