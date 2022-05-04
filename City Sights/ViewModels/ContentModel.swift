@@ -12,6 +12,9 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     var locationManager = CLLocationManager()
     
+    @Published var restaurants = [Business]()
+    @Published var sights = [Business]()
+    
     // Need the override keyword to use this init method rather than the method in NSObject
     override init() {
         
@@ -52,8 +55,8 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             locationManager.stopUpdatingLocation()
          
             // If we have user coordinates, send in Yelp API
-//            getBusinesses(category: "arts", location: userLocation!)
-            getBusinesses(category: "restaurants", location: userLocation!)
+            getBusinesses(category: Constants.sightsKey, location: userLocation!)
+            getBusinesses(category: Constants.restaurantsKey, location: userLocation!)
         }
     }
     
@@ -62,7 +65,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     func getBusinesses(category: String, location: CLLocation) {
         
         // Create URL
-        var urlComponents = URLComponents(string: "https://api.yelp.com/v3/businesses/search" )
+        var urlComponents = URLComponents(string: Constants.apiUrl )
         
         urlComponents?.queryItems = [
             URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
@@ -89,7 +92,28 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
                 
                 // Check that there isn't an error
                 if error == nil {
-                    print(response ?? "")
+                    
+                    do {
+                        
+                        // Parse JSON
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode(BusinessSearch.self, from: data!)
+                        
+                        DispatchQueue.main.async {
+                            
+                            switch category {
+                            case Constants.sightsKey:
+                                self.sights = result.businesses
+                            case Constants.restaurantsKey:
+                                self.restaurants = result.businesses
+                            default:
+                                break
+                            }
+                        }
+                    }
+                    catch {
+                        print(error)
+                    }
                 }
             }
             
