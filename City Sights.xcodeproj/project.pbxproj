@@ -15,6 +15,7 @@
 		3DF2637A2821CF7800EAB675 /* City_SightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF263792821CF7800EAB675 /* City_SightsUITests.swift */; };
 		3DF2637C2821CF7800EAB675 /* City_SightsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2637B2821CF7800EAB675 /* City_SightsUITestsLaunchTests.swift */; };
 		3DF2638C2821D20500EAB675 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2638B2821D20500EAB675 /* ContentModel.swift */; };
+		3DF2638E2822BA9400EAB675 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2638D2822BA9400EAB675 /* Business.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3DF263792821CF7800EAB675 /* City_SightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_SightsUITests.swift; sourceTree = "<group>"; };
 		3DF2637B2821CF7800EAB675 /* City_SightsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_SightsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3DF2638B2821D20500EAB675 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		3DF2638D2822BA9400EAB675 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		3DF263882821CFEA00EAB675 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3DF2638D2822BA9400EAB675 /* Business.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DF263612821CF7600EAB675 /* LaunchView.swift in Sources */,
+				3DF2638E2822BA9400EAB675 /* Business.swift in Sources */,
 				3DF2635F2821CF7600EAB675 /* CitySightsApp.swift in Sources */,
 				3DF2638C2821D20500EAB675 /* ContentModel.swift in Sources */,
 			);
