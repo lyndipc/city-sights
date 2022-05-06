@@ -24,7 +24,7 @@ class Business: Decodable, Identifiable, ObservableObject {
     var transactions: [String]?
     var price: String?
     var location: Location?
-    var phone: String
+    var phone: String?
     var displayPhone: String?
     var distance: Double?
     

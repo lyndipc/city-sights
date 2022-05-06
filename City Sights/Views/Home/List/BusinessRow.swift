@@ -43,5 +43,6 @@ struct BusinessRow: View {
                 }
             }
         }
+        .foregroundColor(.black)
     }
 }
