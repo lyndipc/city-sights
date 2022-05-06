@@ -106,7 +106,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
                         
                         // Sort businesses
                         var businesses = result.businesses
-                        businesses.sorted { (b1, b2) -> Bool in
+                        businesses = businesses.sorted { (b1, b2) -> Bool in
                             return  b1.distance ?? 0 < b2.distance ?? 0
                         }
                         
