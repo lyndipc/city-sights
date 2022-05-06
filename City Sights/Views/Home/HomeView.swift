@@ -21,13 +21,16 @@ struct HomeView: View {
             if !isMapShowing {
                 
                 // Show list
-                VStack {
+                VStack(alignment: .leading) {
                     HStack {
                         Image(systemName: "mappin")
                         Text("San Francisco")
                         Spacer()
                         Text("Switch to map view")
                     }
+                    Divider()
+                    
+                    BusinessList()
                 }
             }
             else {
