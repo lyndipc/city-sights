@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var model: ContentModel
-    
     @State var isMapShowing = false
+    @State var selectedBusiness: Business?
     
     var body: some View {
         
@@ -40,9 +40,14 @@ struct HomeView: View {
                 }
                 else {
                     // Show map
-                    BusinessMap()
+                    BusinessMap(selectedBusiness: $selectedBusiness)
                         .ignoresSafeArea()
-                    
+                        .sheet(item: $selectedBusiness) { business in
+                            
+                            // Create a BusinessDetail instance
+                            // Pass in selected business
+                            BusinessDetail(business: business)
+                        }
                 }
             }
         }

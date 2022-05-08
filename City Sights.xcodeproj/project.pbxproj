@@ -104,9 +104,10 @@
 		3D441BD3282335F600CD7953 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3D441BD62823361600CD7953 /* HomeView.swift */,
+				3DEA9E1E28256E5A009E884C /* Detail */,
 				3D8E31D72825B1110026E7F3 /* Map */,
 				3D8C19262824AFBF005429E9 /* List */,
-				3D441BD62823361600CD7953 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -128,7 +129,6 @@
 		3D8C19262824AFBF005429E9 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				3DEA9E1E28256E5A009E884C /* Detail */,
 				3D8C19272824AFE2005429E9 /* BusinessList.swift */,
 				3D8C19292824B17A005429E9 /* BusinessSectionHeader.swift */,
 				3D8C192B2824B295005429E9 /* BusinessSection.swift */,
@@ -224,10 +224,10 @@
 		3DF263892821CFF000EAB675 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DF263602821CF7600EAB675 /* LaunchView.swift */,
 				3D441BD52823360300CD7953 /* Onboarding */,
 				3D441BD4282335FB00CD7953 /* Denied */,
 				3D441BD3282335F600CD7953 /* Home */,
-				3DF263602821CF7600EAB675 /* LaunchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
