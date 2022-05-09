@@ -92,7 +92,7 @@ struct DirectionsMap: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             
             let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
-            renderer.strokeColor = .blue
+            renderer.strokeColor = UIColor(Color(red: 55/255, green: 197/255, blue: 192/255))
             renderer.lineWidth = 5
             return renderer
         }

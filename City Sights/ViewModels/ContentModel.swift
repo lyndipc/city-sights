@@ -17,6 +17,8 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
     
+    @Published var placemark: CLPlacemark?
+    
     // Need the override keyword to use this init method rather than the method in NSObject
     override init() {
         
@@ -62,6 +64,19 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             
             // Stop requesting the location after we get it once
             locationManager.stopUpdatingLocation()
+            
+            // Get the placemark of the user
+            let geoCoder = CLGeocoder()
+            
+            geoCoder.reverseGeocodeLocation(userLocation!) { placemarks, error in
+                
+                // Check that there aren't errors
+                if error == nil && placemarks != nil {
+                    
+                    // Take the first placemark
+                    self.placemark = placemarks?.first
+                }
+            }
          
             // If we have user coordinates, send in Yelp API
             getBusinesses(category: Constants.sightsKey, location: userLocation!)
