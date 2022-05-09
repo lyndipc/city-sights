@@ -24,7 +24,7 @@ struct HomeView: View {
                     // Show list
                     VStack(alignment: .leading) {
                         HStack {
-                            Image(systemName: "mappin")
+                            Image(systemName: "location")
                             Text("San Francisco")
                             Spacer()
                             Button("Map View") {
@@ -33,7 +33,17 @@ struct HomeView: View {
                         }
                         Divider()
                         
-                        BusinessList()
+                        ZStack(alignment: .top) {
+                            
+                            BusinessList()
+                            
+                            HStack {
+                                Spacer()
+                                YelpAttribution(link: "https://yelp.com")
+                            }
+                            .padding(.trailing, -20)
+                        }
+                        
                     }
                     .padding([.horizontal, .top])
                     .navigationBarHidden(true)
@@ -61,7 +71,7 @@ struct HomeView: View {
                                 .frame(height: 48)
                             
                             HStack {
-                                Image(systemName: "mappin")
+                                Image(systemName: "location")
                                 Text("San Francisco")
                                 Spacer()
                                 Button("List View") {
